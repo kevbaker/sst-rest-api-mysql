@@ -3,6 +3,8 @@ import * as ec2 from "@aws-cdk/aws-ec2";
 import * as rds from "@aws-cdk/aws-rds";
 import * as sst from "@serverless-stack/resources";
 
+// REF: https://serverless-stack.com/examples/how-to-use-postgresql-in-your-serverless-app.html
+
 export default class MyStack extends sst.Stack {
   constructor(scope, id, props) {
     super(scope, id, props);
@@ -17,11 +19,12 @@ export default class MyStack extends sst.Stack {
       vpc,
       defaultDatabaseName,
       // Set the engine to Postgres
-      engine: rds.DatabaseClusterEngine.AURORA_POSTGRESQL,
+      // engine: rds.DatabaseClusterEngine.AURORA_POSTGRESQL,
+      engine: rds.DatabaseClusterEngine.AURORA_MYSQL,
       parameterGroup: rds.ParameterGroup.fromParameterGroupName(
         this,
         "ParameterGroup",
-        "default.aurora-postgresql10"
+        "default.aurora-mysql5.7"
       ),
       // Optional, disable the instance from pausing after 5 minutes
       scaling: { autoPause: cdk.Duration.seconds(0) },

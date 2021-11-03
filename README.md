@@ -8,6 +8,13 @@ Start by installing the dependencies.
 $ npm install
 ```
 
+## Setup
+
+* Follows this document: https://serverless-stack.com/examples/how-to-use-postgresql-in-your-serverless-app.html
+* Customized for MySQL 5.7
+
+
+
 ## Commands
 
 ### `npm run start`
