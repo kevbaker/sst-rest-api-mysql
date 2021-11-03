@@ -19,7 +19,6 @@ export default class MyStack extends sst.Stack {
       vpc,
       defaultDatabaseName,
       // Set the engine to Postgres
-      // engine: rds.DatabaseClusterEngine.AURORA_POSTGRESQL,
       engine: rds.DatabaseClusterEngine.AURORA_MYSQL,
       parameterGroup: rds.ParameterGroup.fromParameterGroupName(
         this,
